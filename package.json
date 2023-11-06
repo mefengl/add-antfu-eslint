@@ -1,6 +1,6 @@
 {
   "name": "add-antfu-eslint",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Add @antfu/eslint-config, another kind of prettier",
   "author": "mefengl",
   "license": "MIT",
