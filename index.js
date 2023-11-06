@@ -10,7 +10,7 @@ function executeCommand(command) {
 
 function main() {
   // Step 1: Install packages
-  executeCommand('npx ni -D eslint @antfu/eslint-config');
+  executeCommand('npx @antfu/ni -D eslint @antfu/eslint-config');
 
   // Step 2: Check for type: 'module' in package.json and create eslint.config.js
   const packageJsonPath = path.join(process.cwd(), 'package.json');
@@ -18,17 +18,13 @@ function main() {
 
   let eslintConfigContent = '';
   if (packageJson.type === 'module') {
-    eslintConfigContent = `
-import antfu from '@antfu/eslint-config'
+    eslintConfigContent = `import antfu from '@antfu/eslint-config'
 
-export default antfu();
-    `;
+export default antfu();`;
   } else {
-    eslintConfigContent = `
-const antfu = require('@antfu/eslint-config').default
+    eslintConfigContent = `const antfu = require('@antfu/eslint-config').default
 
-module.exports = antfu();
-    `;
+module.exports = antfu();`;
   }
   fs.writeFileSync(path.join(process.cwd(), 'eslint.config.js'), eslintConfigContent);
 
