@@ -49,4 +49,10 @@ module.exports = antfu();`
   /* eslint-enable no-console */
 }
 
-main()
+try {
+  main()
+}
+catch (error) {
+  // eslint-disable-next-line no-console
+  console.log('\n🚀 Problem detected! Landing back on Earth... 🌍✨')
+}
