@@ -11,7 +11,7 @@ function executeCommand(command) {
 
 function main() {
   // Step 1: Install packages
-  executeCommand('npx @antfu/ni -D eslint @antfu/eslint-config')
+  executeCommand('npx @antfu/ni -D eslint @antfu/eslint-config@latest')
 
   // Step 2: Check for type: 'module' in package.json and create eslint.config.js
   const packageJsonPath = path.join(process.cwd(), 'package.json')
